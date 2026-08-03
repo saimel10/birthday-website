@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Princess's Big 2.0 Birthday! 👑🎀</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Fredoka+One&family=Mali:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+    <!-- Canvas Confetti CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Dynamic Sparkle Background Canvas -->
+    <canvas id="sparkleCanvas"></canvas>
+
+    <!-- Floating Background Bubble Orbs -->
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <!-- Audio Element -->
+    <audio id="birthdaySong" loop preload="auto">
+        <source src="audio/happy-birthday.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Floating Audio Control Toggle -->
+    <button class="music-toggle" id="musicToggle" onclick="toggleAudio()" title="Play Magical Tune!">
+        <span class="music-icon">🎶</span>
+    </button>
+
+    <!-- Royal Castle Birthday Card Container -->
+    <main class="royal-card">
+        <div class="crown-badge">
+            <span class="crown-icon">👑</span>
+            <div class="sparkle-bounce">✨</div>
+        </div>
+
+        <span class="royal-tag"> Level 20 Unlocked! </span>
+        <h1 class="royal-title">Official Birthday Princess</h1>
+        <p class="royal-subtitle">20 years of pure cuteness & magic! 🦄💖</p>
+
+        <div class="card-message">
+            <p>Gather around, tiny birds & forest fairies! 🕊️✨ The sweetest princess in all the land turns TWENTY today! May your day be filled with unlimited cake, giggles, and magic!</p>
+        </div>
+
+        <button class="surprise-btn" id="surpriseBtn" onclick="revealFairytaleSurprise()">
+            <span class="btn-sparkle">🪄</span>
+            <span class="btn-text">Tap For Magic Surprise!</span>
+            <span class="btn-icon">🎁</span>
+        </button>
+
+        <!-- Hidden Surprise Section -->
+        <div class="surprise-container" id="surpriseContainer">
+            <!-- Animated Flying Creatures -->
+            <div class="flying-creatures">
+                <div class="bird bird-left">🕊️</div>
+                <div class="bird bird-right">🐥</div>
+                <div class="fairy pari-left">🧚‍♀️</div>
+                <div class="fairy pari-right">🪄✨</div>
+            </div>
+
+            <!-- Cute Princess Frame -->
+            <div class="cinderella-box">
+                <div class="cinderella-avatar-wrapper">
+                    <div class="cinderella-avatar">
+                        <img src="img/img.jpg" alt="Princess Photo">
+                    </div>
+                    <span class="sparkle-tag tag-1">🌸</span>
+                    <span class="sparkle-tag tag-2">👑</span>
+                    <span class="sparkle-tag tag-3">⭐</span>
+                </div>
+                <h2 class="cinderella-speech">"Happy birthday 🧁✨🎂"</h2>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,357 @@
+/* ==========================================================================
+   Playful & Whimsical Storybook Aesthetic
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Fredoka', sans-serif;
+    background: #fff0f5;
+    background: radial-gradient(circle at 50% 30%, #fff0f6 0%, #ffdeeb 50%, #f3c4fb 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+    padding: 20px;
+    color: #5c2c6d;
+}
+
+/* Sparkle Canvas Background */
+#sparkleCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Floating Soft Bubble Orbs */
+.ambient-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.75;
+    z-index: 0;
+    pointer-events: none;
+    animation: orbFloat 8s infinite alternate ease-in-out;
+}
+
+.orb-1 {
+    width: 300px;
+    height: 300px;
+    background: #ffb7d5;
+    top: -40px;
+    left: -40px;
+}
+
+.orb-2 {
+    width: 350px;
+    height: 350px;
+    background: #d8b4fe;
+    bottom: -80px;
+    right: -40px;
+    animation-delay: -3s;
+}
+
+.orb-3 {
+    width: 280px;
+    height: 280px;
+    background: #bae6fd;
+    top: 40%;
+    left: 70%;
+    animation-delay: -5s;
+}
+
+@keyframes orbFloat {
+    0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+    100% { transform: translate(25px, 35px) scale(1.2) rotate(10deg); }
+}
+
+/* Audio Controller Button */
+.music-toggle {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 100;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 3px solid #f472b6;
+    color: #db2777;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(244, 114, 182, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.music-toggle:hover {
+    transform: scale(1.2) rotate(20deg);
+}
+
+.music-toggle.playing {
+    animation: bounceMusic 1.2s infinite ease-in-out alternate;
+}
+
+@keyframes bounceMusic {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(-8px) scale(1.1); }
+}
+
+/* Main Whimsical Card */
+.royal-card {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    border: 4px dashed #f472b6;
+    border-radius: 40px;
+    padding: 3rem 2rem;
+    max-width: 520px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(236, 72, 153, 0.2), inset 0 0 15px rgba(255, 255, 255, 0.9);
+    position: relative;
+    z-index: 10;
+}
+
+/* Crown & Sparkle Elements */
+.crown-badge {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 0.3rem;
+}
+
+.crown-icon {
+    font-size: 4.2rem;
+    display: inline-block;
+    filter: drop-shadow(0 8px 10px rgba(245, 158, 11, 0.3));
+    animation: bouncyCrown 2.5s infinite ease-in-out alternate;
+}
+
+.sparkle-bounce {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    font-size: 1.6rem;
+    animation: sparkleSpin 2s infinite linear;
+}
+
+@keyframes bouncyCrown {
+    0% { transform: translateY(0) rotate(-6deg) scale(1); }
+    100% { transform: translateY(-12px) rotate(6deg) scale(1.1); }
+}
+
+@keyframes sparkleSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Typography Hierarchy */
+.royal-tag {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #db2777;
+    background: #fce7f3;
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 1rem;
+    border: 2px solid #fbcfe8;
+}
+
+.royal-title {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2.8rem;
+    color: #ec4899;
+    line-height: 1.15;
+    text-shadow: 2px 2px 0px #fbcfe8, 4px 4px 0px rgba(219, 39, 119, 0.15);
+    margin-bottom: 0.3rem;
+}
+
+.royal-subtitle {
+    font-size: 1.15rem;
+    color: #9333ea;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.card-message {
+    background: #fff5f8;
+    border: 2px solid #fbcfe8;
+    padding: 1.2rem 1.4rem;
+    border-radius: 25px;
+    color: #7e22ce;
+    font-family: 'Mali', cursive;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* Interactive Wand Button */
+.surprise-btn {
+    position: relative;
+    background: linear-gradient(135deg, #f472b6 0%, #c084fc 100%);
+    color: #ffffff;
+    border: 3px solid #ffffff;
+    padding: 18px 36px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: 'Fredoka', sans-serif;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(236, 72, 153, 0.35);
+    transition: all 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.surprise-btn:hover {
+    transform: translateY(-5px) scale(1.08) rotate(-1deg);
+    box-shadow: 0 15px 30px rgba(236, 72, 153, 0.5);
+}
+
+.surprise-btn:active {
+    transform: translateY(2px) scale(0.98);
+}
+
+/* Surprise Revealed Section */
+.surprise-container {
+    display: none;
+    margin-top: 2rem;
+    position: relative;
+    animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+@keyframes bounceIn {
+    0% { opacity: 0; transform: scale(0.3) translateY(40px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Cinderella Card Design */
+.cinderella-box {
+    background: #ffffff;
+    border: 3px solid #f472b6;
+    border-radius: 30px;
+    padding: 2rem 1.5rem 1.5rem;
+    box-shadow: 0 12px 25px rgba(192, 132, 252, 0.2);
+    position: relative;
+}
+
+.cinderella-avatar-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.cinderella-avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    padding: 6px;
+    background: linear-gradient(135deg, #fef08a, #f472b6, #38bdf8);
+}
+
+.cinderella-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffffff;
+}
+
+.sparkle-tag {
+    position: absolute;
+    font-size: 1.6rem;
+    animation: floatTag 1.8s infinite alternate ease-in-out;
+}
+
+.tag-1 { top: -5px; right: -8px; animation-delay: 0s; }
+.tag-2 { bottom: 0px; left: -10px; animation-delay: -0.6s; }
+.tag-3 { top: 40%; right: -18px; animation-delay: -1.2s; }
+
+@keyframes floatTag {
+    0% { transform: translateY(0) scale(1) rotate(0deg); }
+    100% { transform: translateY(-10px) scale(1.2) rotate(15deg); }
+}
+
+.cinderella-speech {
+    font-family: 'Mali', cursive;
+    color: #9333ea;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+/* Animated Flying Creatures */
+.flying-creatures .bird, .flying-creatures .fairy {
+    position: absolute;
+    font-size: 2.4rem;
+    z-index: 15;
+    pointer-events: none;
+}
+
+.bird-left {
+    top: -40px;
+    left: -20px;
+    animation: flyLeft 3s infinite alternate ease-in-out;
+}
+
+.bird-right {
+    top: -40px;
+    right: -20px;
+    animation: flyRight 3s infinite alternate ease-in-out;
+}
+
+.pari-left {
+    bottom: -15px;
+    left: -30px;
+    animation: pariFloat 2.5s infinite ease-in-out alternate;
+}
+
+.pari-right {
+    bottom: -15px;
+    right: -30px;
+    animation: pariFloat 2.8s infinite ease-in-out alternate-reverse;
+}
+
+@keyframes flyLeft {
+    0% { transform: translate(0, 0) rotate(-10deg) scale(0.9); }
+    100% { transform: translate(15px, -15px) rotate(10deg) scale(1.1); }
+}
+
+@keyframes flyRight {
+    0% { transform: translate(0, 0) rotate(10deg) scale(0.9); }
+    100% { transform: translate(-15px, -15px) rotate(-10deg) scale(1.1); }
+}
+
+@keyframes pariFloat {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(-14px) scale(1.15); }
+}
+
+/* Responsive Tweaks */
+@media (max-width: 480px) {
+    .royal-card {
+        padding: 2.2rem 1.2rem;
+    }
+    .royal-title {
+        font-size: 2.2rem;
+    }
+    .royal-subtitle {
+        font-size: 1rem;
+    }
+    .cinderella-speech {
+        font-size: 1.1rem;
+    }
+}
