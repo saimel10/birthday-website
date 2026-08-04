@@ -27,7 +27,7 @@ function revealFairytaleSurprise() {
     triggerRoyalConfetti();
 
     if (surpriseBtn) {
-        surpriseBtn.innerHTML = '🎉 Yay! Party Time! 🥳';
+        surpriseBtn.innerHTML = '🎉 Yay! 🥳';
         surpriseBtn.style.pointerEvents = "none";
         surpriseBtn.style.background = "linear-gradient(135deg, #10b981, #06b6d4)";
         surpriseBtn.style.transform = "scale(1.05)";
